@@ -1,5 +1,12 @@
 ### LoginLimit ##
 ---
+#### 起步
+`var/Widget/User.php`中约117行，将这三行注释，因为这边有执行插件就返回插件的返回结果，而插件并没有验证登录逻辑。
+![微信截图_20151207152313.png][1]
+
+
+
+
 
 #### 使用方法：
 第一步：下载本插件，放在 `usr/plugins/` 目录中；  
@@ -17,3 +24,5 @@
 作者：洪伟鹏    
 主页：[blog.west2online.com](http://blog.west2online.com/)  
 或者通过 Emai:hongweichen8888@sina.com
+
+  [1]: http://blog.west2online.com/usr/uploads/2015/12/2124740143.png
