@@ -60,7 +60,7 @@ include_once 'menu.php';
 									<td><?php echo htmlspecialchars($log['try_username'], ENT_QUOTES); ?></td>
 									<td><?php echo htmlspecialchars($log['try_password'], ENT_QUOTES); ?></td>
 									<td><?php echo htmlspecialchars($log['ip'], ENT_QUOTES); ?></td>
-									<td><?php echo date('Y-m-d H:i:s', $log['add_time']);?></td>
+									<td><?php echo Typecho_I18n::dateWord($log['add_time'], $_SERVER['REQUEST_TIME']);?></td>
                                 </tr>
                                 <?php endforeach; ?>
                                 <?php else: ?>
@@ -72,7 +72,7 @@ include_once 'menu.php';
                         </table>
                         <?php
                         	//分页
-                        	$currUrl = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'];
+                        	$currUrl = ($_SERVER['HTTPS'] == "on" ? 'https://' : 'http://').$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'];
 							parse_str($_SERVER['QUERY_STRING'], $parseUrl);
 							unset($parseUrl['page']);
                         	$query = $currUrl.'?'.http_build_query($parseUrl);
